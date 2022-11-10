@@ -54,6 +54,7 @@ brew install libpng
 This should be enough to put on your computer every single thing you need, and more.
 
 ### General troubleshooting
+
 One error might be the fact that pkg-config is not able to recognize the instalation of libffi. If tha's the case you should do add the location of the library to `PKG_CONFIG_PATH`. Which for my computer was here: `/usr/local/opt/libffi/lib/pkgconfig`. And since the variable was already empty and i am using the [Fish Shell](https://fishshell.com/) i simply executed this command to set as a "Universal Variable": `set -Ux PKG_CONFIG_PATH /usr/local/opt/libffi/lib/pkgconfig`
 
 If none of that worked, the thing to look for in your desperate google search is `gtk+-2.0`. But `libgtk2.0-dev` o maybe just `libgtk2.0` might also yield useful results. As for pkg-config. The exact thing we are looking for is a file called `gtk+-2.0.pc` which should also be in the universal file `PKG_CONFIG_PATH`. Si quieres ir por ese enfoque y ver si ese archivo YA esta en tu path puedes hacer `locate '*.pc' | grep gtk`. En mi caso estaba aqui: `/usr/local/lib/pkgconfig`. Y simplemente me tocó hacer poner eso a mano en PKG_CONFIG_PATH. Resulthing in this: `set -Ux PKG_CONFIG_PATH /usr/local/opt/libffi/lib/pkgconfig /usr/local/lib/pkgconfig`
@@ -131,4 +132,3 @@ cabal run HaskellGUI
 ```
 
 And after an awfully long wait, everything was, at last, **functional** (pun intended)
-
