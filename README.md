@@ -8,6 +8,8 @@ I made this mainly because setting this up in my Mac was a BIG pain. And from no
 
 Currently this instructions are only for **MacOS** so this is hardly a comprehensive list, but this is because this was the only enviroment i had trouble with, Windows has some very detailled instructions floating aroudn and linux suposedly just works out of the box.
 
+### Setting up pkg-config
+
 The first thing we should do is make sure this command finds something:
 
 ```bash
@@ -73,6 +75,8 @@ I hope that'  helpful in the case where you still were unable to get pkg-config 
 
 If, on the contrary, you now see something when you type `pkg-config --cflags gtk+-2.0` then you are good to go!
 
+### Installing the libraries with cabal a
+
 Now, let's continue with trying to see if cabal is ready to install gtk without complainign about beign unable to find something by running this command:
 
 ```
@@ -81,6 +85,8 @@ cabal install gtk -fhave-quartz-gtk --allow-newer=base gtk
 ```
 
 In my machine this took a pretty long. But eventually they were done and instalation went succesfuly. So finally, let's set upt a project (This project) so that we can get to work.
+
+### Creating the project
 
 ```
 mkdir HaskellGUI
@@ -132,5 +138,3 @@ cabal run HaskellGUI
 
 And after an awfully long wait, everything was, at last, functional (pun intended)
 
-
-# Haskell_GTK_Quickstart
